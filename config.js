@@ -5,21 +5,21 @@ module.exports = {
     //Your bot data
     bot: {
         //PASTE YOUR DISCORD BOT TOKEN IN DATA.JSON FILE (more secure) - https://tinyurl.com/discordbot-token
-        prefix: "", //Your custom prefix of the bot, like "!" or "."
-        presence: "", //Custom activity/status text
-        status: "",  //You can choose: ONLINE, IDLE, DND (do not disturb), INVISIBLE
-        activity: "", //You can choose: PLAYING, LISTENING, WATCHING, COMPETING
-        guildID: "", //Your Discord server guild ID
+        prefix: ".", //Your custom prefix of the bot, like "!" or "."
+        presence: "Mini Universe", //Custom activity/status text
+        status: "ONLINE",  //You can choose: ONLINE, IDLE, DND (do not disturb), INVISIBLE
+        activity: "PLAYING", //You can choose: PLAYING, LISTENING, WATCHING, COMPETING
+        guildID: "1078639479599943700", //Your Discord server guild ID
     },
 
     //Your Minecraft server data
     server: {
-        name: "", //Your server name
-        type: "", //"java" or "bedrock"
-        ip: "", //IP of your server - do not include port - e.g. "mc.hypixel.net"
+        name: "Mini Universe", //Your server name
+        type: "Java", //"java" or "bedrock"
+        ip: "miniuniverse.fun", //IP of your server - do not include port - e.g. "mc.hypixel.net"
         port: "", //PORT of your server - empty => default port (JA 25565, BE 19132)
-        icon: "", //Link to icon - like "https://website.com/icon.png"
-        version: "", //Minecraft version of sever
+        icon: "https://cdn.discordapp.com/attachments/1048892881752039434/1076579603772088381/Logo-2.png", //Link to icon - like "https://website.com/icon.png"
+        version: "1.8.x-1.19.x", //Minecraft version of sever
         vote: "" //Vote link - like "https://minecraftpocket-servers.com/server/80103/vote/"
     },
 
@@ -33,11 +33,11 @@ module.exports = {
         readyScan: true, //On bot's start, send to console server's essential information?
         //Features:
         randomColor: false, //Enable random hex color generator for embeds? Overwrites embeds settings!
-        statusCH: false, //Enable auto-changing status message?
+        statusCH: true, //Enable auto-changing status message?
         votingCH: false, //Enable voting channel?
-        countingCH: false, //Enable counting channel?
+        countingCH: true, //Enable counting channel?
         //Advanced:
-        removeServerType: false, //Remove "Spigot", "Purpur" etc. from version and leave only "1.18", "1.19" etc.?
+        removeServerType: true, //Remove "Spigot", "Purpur" etc. from version and leave only "1.18", "1.19" etc.?
         showDefaultPort: false //Show the server port behind IP if its default (25565, 19132) (primarily statusCH feature)?
     },
 
@@ -49,7 +49,7 @@ module.exports = {
 
     //Auto changing status message
     statusCH: {
-        channelID: "",
+        channelID: "1111538487909429371",
         time: "30s" //Period of updating status message - like "3min", "20s" or "1min" etc.
     },
 
@@ -73,7 +73,7 @@ module.exports = {
 
     //Counting channel - auto updating channel name
     countingCH: {
-        channelID: "",
+        channelID: "1111538216089178124",
         time: "1min", //Period of updating channel name - like "3min", "20s" or "1min" etc.
         name: "{onlinePlayers} players online!", //Name of the channel
         offline: "Server is offline!" //Name of the channel if the server is offline / not found
@@ -94,7 +94,7 @@ module.exports = {
             info: "💙",
             warn: "💛",
             debug: "💜",
-            error: "🛑"
+            error: "🛑",
         }
     },
 
@@ -120,11 +120,11 @@ module.exports = {
             enableNormal: true, //Enables normal command
             enableSlash: true, //Enables slash command
             aliases: [ //Only for normal commands
-                "i", "ip-address", "address", "connect", "join"
+                "", "ip-address", "address", "connect", "join"
             ],
             text: { //Custom text settings (for translating or customization)
                 title: "IP address:",
-                description: "\`{serverIp}\`:\`{serverPort}\`"
+                description: "\`{serverIp}\`"
             }
         },
         list: {
@@ -135,7 +135,7 @@ module.exports = {
             ],
             text: { //Custom text settings (for translating or customization)
                 title: "Online player list:",
-                description: "**{playersOnline}**/**{playersMax}**",
+                description: "**{playersOnline}**",
                 listFormat: "```{playersList}```"
             }
         },
@@ -154,10 +154,10 @@ module.exports = {
                     {motd}
                     
                     **IP Address**
-                    \`{serverIp}\`:\`{serverPort}\`
+                    \`{serverIp}\``
                     
                     **Version**
-                    {serverType} {serverVersion}
+                    {serverVersion}
                     
                     **Players**
                     **{playersOnline}**/**{playersMax}**`,
@@ -181,7 +181,7 @@ module.exports = {
             ],
             text: { //Custom text settings (for translating or customization)
                 title: "Minecraft version:",
-                description: "{serverType} {serverVersion}"
+                description: "{serverVersion}"
             }
         },
         vote: {
